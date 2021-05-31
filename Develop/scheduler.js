@@ -1,6 +1,7 @@
 var dayTime = [09, 10, 11, 12, 13, 14, 15, 16, 17];
  var timeNow = moment().format("HH");
  var container = document.querySelector(".container")
+var getInput = localStorage.getItem
 
 
 moment(Date)
@@ -54,21 +55,48 @@ dayTime.forEach(function(dayTime) {
 // still working on local storage! Value coming back as undefined
 // get the localstorage to display even after refreshing.
 
- function loadTask() {
-     for (var i = 0; i < dayTime.length; i++) {
-         var loadData = localStorage.getItem(dayTime[i]);
-        $(".form-control" + dayTime[i]).val(loadData)
-        container.append(loadData);
-     }
- }
+//  for (var i = 0; i < dayTime.length; i++) {
+//      var loadData = localStorage.getItem(dayTime[i]);
+//     $(".form-control" + dayTime[i]).val(loadData)
+//     container.append(loadData);
+//  }
+//  function loadTask() {
+//     dayTime.forEach(function() {
+//         localStorage.getItem(dayTime.length)
+//         $('.form-control').val();
+//     })
+    
+//  }
+// console.log(loadTask)
+
+// $(".saveBtn").on("click", function(event) {
+//     event.preventDefault();
+//     var inputValue = $(this).siblings(".form").val();
+//     var item = $(this).parent().data("hour")
+
+//     localStorage.setItem(inputValue, item)
+
+//     loadTask();
+// })
+
+// function savetask() {
+//     localStorage.setItem("dayTime", dayTime)
+// }
+
+// function display() {
+//     dayTime.forEach(function() {
+//         localStorage.getItem("dayTime")
+//     })
+// }
+
+// $(".saveBtn").on("click", function(event) {
+//     event.preventDefault();
+//     var saveIndex = $(this).siblings(".form").val();
+//     dayTime[saveIndex] = $(this).parent().data("hour")
+//     console.log(saveIndex)
+    
+//     savetask();
+//     display();
 
 
-$(".saveBtn").on("click", function(event) {
-    event.preventDefault();
-    var inputValue = $(this).siblings(".form").val();
-    var item = $(this).parent().data("hour")
-
-    localStorage.setItem(inputValue, item)
-
-    loadTask();
-})
+// })
